@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB Diamond Top-Up - ទំព័រដើម</title>
+    <!-- ភ្ជាប់ External CSS -->
+    <link rel="stylesheet" href="10b.css">
+    <!-- FontPrompt/Battambang សម្រាប់អក្សរខ្មែរ -->
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <!-- របារម៉ឺនុយតំណភ្ជាប់ទំព័រទាំង ៣ -->
+        <nav class="navbar">
+            <a href="index.html" class="nav-link active">🏠 ទំព័រដើម</a>
+            <a href="history.html" class="nav-link">📜 ប្រវត្តិទិញ</a>
+            <a href="support.html" class="nav-link">💬 ជំនួយ</a>
+        </nav>
+
+        <header>
+            <h1>💎 MLBB Diamond Top-Up 💎</h1>
+            <p>បំពេញព័ត៌មាន និងជ្រើសរើសកញ្ចប់ពេជ្រដែលលោកអ្នកចង់ទិញ</p>
+        </header>
+
+        <form id="topupForm" class="topup-form">
+            <!-- ផ្នែកបញ្ចូលព័ត៌មានគណនី -->
+            <div class="section-card">
+                <h2>1. បញ្ចូលព័ត៌មានគណនីហ្គេម</h2>
+                <div class="input-group">
+                    <label for="userid">User ID:</label>
+                    <input type="text" id="userid" placeholder="ឧទាហរណ៍: 12345678" required>
+                </div>
+                <div class="input-group">
+                    <label for="zoneid">Zone ID:</label>
+                    <input type="text" id="zoneid" placeholder="ឧទាហរណ៍: 1234" required>
+                </div>
+            </div>
+
+            <!-- ផ្នែកជ្រើសរើសកញ្ចប់ពេជ្រ (១០ ជម្រើស) -->
+            <div class="section-card">
+                <h2>2. ជ្រើសរើសកញ្ចប់ពេជ្រ</h2>
+                <div class="diamond-grid">
+                    <label class="diamond-card">
+                        <input type="radio" name="diamond" value="11" data-price="$0.25">
+                        <span class="diamonds">💎 11 ពេជ្រ</span>
+                        <span class="price">$0.25</span>
+                    </label>
+                    <label class="diamond-card">
+                        <input type="radio" name="diamond" value="22" data-price="$0.50">
+                        <span class="diamonds">💎 22 ពេជ្រ</span>
+                        <span class="price">$0.50</span>
+                    </label>
+                    <label class="diamond-card">
+                        <input type="radio" name="diamond" value="56" data-price="$1.05">
+                        <span class="diamonds">💎 56 ពេជ្រ</span>
+                        <span class="price">$1.05</span>
+                    </label>
+                    <label class="diamond-card">
+                        <input type="radio" name="diamond" value="112" data-price="$2.10">
+                        <span class="diamonds">💎 112 ពេជ្រ</span>
+                        <span class="price">$2.10</span>
+                    </label>
+                    <label class="diamond-card">
+                        <input type="radio" name="diamond" value="223" data-price="$4.20">
+                        <span class="diamonds">💎 223 ពេជ្រ</span>
+                        <span class="price">$4.20</span>
+                    </label>
+                    <label class="diamond-card">
+                        <input type="radio" name="diamond" value="565" data-price="$10.50">
+                        <span class="diamonds">💎 565 ពេជ្រ</span>
+                        <span class="price">$10.50</span>
+                    </label>
+                    <label class="diamond-card">
+                        <input type="radio" name="diamond" value="1159" data-price="$21.00">
+                        <span class="diamonds">💎 1159 ពេជ្រ</span>
+                        <span class="price">$21.00</span>
+                    </label>
+                    <label class="diamond-card">
+                        <input type="radio" name="diamond" value="2013" data-price="$35.00">
+                        <span class="diamonds">💎 2013 ពេជ្រ</span>
+                        <span class="price">$35.00</span>
+                    </label>
+                    <label class="diamond-card">
+                        <input type="radio" name="diamond" value="4830" data-price="$84.00">
+                        <span class="diamonds">💎 4830 ពេជ្រ</span>
+                        <span class="price">$84.00</span>
+                    </label>
+                    <label class="diamond-card">
+                        <input type="radio" name="diamond" value="9660" data-price="$168.00">
+                        <span class="diamonds">💎 9660 ពេជ្រ</span>
+                        <span class="price">$168.00</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- ប៊ូតុងបញ្ជាក់ការទិញ -->
+            <button type="submit" class="submit-btn">បញ្ជាក់ការទិញឥឡូវនេះ</button>
+        </form>
+    </div>
+
+    <!-- Modern Success Modal Popup -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">✅</div>
+            <h2>ការទិញជោគជ័យ!</h2>
+            <p id="modalMessage">អរគុណសម្រាប់ការគាំទ្រ។</p>
+            <button id="closeModalBtn" class="modal-btn">បិទ</button>
+        </div>
+    </div>
+
+    <!-- ភ្ជាប់ External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

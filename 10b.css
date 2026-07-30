@@ -1,0 +1,259 @@
+/* កំណត់ទូទៅ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Battambang', sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* ស្ទីលសម្រាប់ Navbar (តំណភ្ជាប់ទំព័រទាំង៣) */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    background: #0f172a;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+}
+
+.nav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background: #1e293b;
+}
+
+.nav-link.active {
+    color: #ffffff;
+    background: #0284c7;
+    font-weight: bold;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: #38bdf8;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.section-card {
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #334155;
+}
+
+.section-card h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #f8fafc;
+}
+
+/* ទម្រង់ប្រអប់បញ្ចូល ID */
+.input-group {
+    margin-bottom: 12px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #cbd5e1;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 12px;
+    background: #1e293b;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow: 0 0 5px rgba(56, 189, 248, 0.3);
+}
+
+/* បណ្តុំកញ្ចប់ពេជ្រ (Grid) */
+.diamond-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+@media (min-width: 550px) {
+    .diamond-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.diamond-card {
+    background: #1e293b;
+    border: 2px solid #334155;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.diamond-card:hover {
+    border-color: #64748b;
+    transform: translateY(-2px);
+}
+
+.diamond-card input[type="radio"] {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    accent-color: #38bdf8;
+}
+
+.diamond-card .diamonds {
+    font-size: 14px;
+    font-weight: bold;
+    color: #f1f5f9;
+    margin-bottom: 5px;
+}
+
+.diamond-card .price {
+    font-size: 13px;
+    color: #38bdf8;
+}
+
+/* ពេលជ្រើសរើសកញ្ចប់ */
+.diamond-card.selected {
+    border-color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+}
+
+/* ប៊ូតុងបញ្ជាក់ */
+.submit-btn {
+    width: 100%;
+    background: #0284c7;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover {
+    background: #0369a1;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* --- Modern Modal Popup CSS --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    border: 1px solid #334155;
+    animation: scaleUp 0.3s ease;
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.success-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.modal-content h2 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.modal-content p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.modal-btn {
+    background: #0284c7;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.modal-btn:hover {
+    background: #0369a1;
+}
